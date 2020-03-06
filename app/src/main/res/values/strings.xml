@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">KUNEKT</string>
+    <string name="stringUsername">E-mail Address</string>
+    <string name="stringPassword">Password</string>
+    <string name="stringLogin">Log in</string>
+    <string name="stringSignUp">SIGN UP</string>
+    <string name="stringMessage">Password must be at least 6 characters long</string>
+
+</resources>
