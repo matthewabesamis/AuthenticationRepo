@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity{
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null)
                 {
-                    startActivity(new Intent(MainActivity.this, HomePage.class));
+                    startActivity(new Intent(MainActivity.this, Kunekt_Main_Home.class));
                 }
             }
         };

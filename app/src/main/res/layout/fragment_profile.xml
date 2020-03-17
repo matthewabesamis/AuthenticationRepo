@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_main_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="211dp"
+                android:layout_marginBottom="584dp"
+                android:src="@drawable/default_user_profile"
+                app:civ_border_color="#000000"
+                app:civ_border_width="3dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#000000"
+                app:civ_shadow_radius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="296dp"
+                android:layout_marginTop="151dp"
+                android:layout_marginEnd="27dp"
+                android:layout_marginBottom="591dp"
+                android:text="Upload"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="189dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="731dp"
+                android:text="Matthew Abesamis"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_choose_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="178dp"
+                android:layout_marginTop="151dp"
+                android:layout_marginEnd="123dp"
+                android:layout_marginBottom="591dp"
+                android:text="Choose File"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_checkins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="199dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="123dp"
+                android:layout_marginBottom="677dp"
+                android:text="@string/title_checkins"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_checkCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="234dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="166dp"
+                android:layout_marginBottom="657dp"
+                android:text="0"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="319dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="677dp"
+                android:text="@string/title_friends"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_friendCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="346dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="54dp"
+                android:layout_marginBottom="657dp"
+                android:text="0"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText_about"
+                android:layout_width="344dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="287dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="403dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText_job"
+                android:layout_width="344dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="427dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="288dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText_company"
+                android:layout_width="344dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="542dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="173dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText_school"
+                android:layout_width="344dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="657dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="58dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="257dp"
+                android:layout_marginEnd="327dp"
+                android:layout_marginBottom="509dp"
+                android:text="@string/title_about"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewJob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="396dp"
+                android:layout_marginEnd="309dp"
+                android:layout_marginBottom="370dp"
+                android:text="@string/title_job"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="511dp"
+                android:layout_marginEnd="300dp"
+                android:layout_marginBottom="255dp"
+                android:text="@string/title_company"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="625dp"
+                android:layout_marginEnd="320dp"
+                android:layout_marginBottom="141dp"
+                android:text="@string/title_school"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/viewAbout"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="214dp"
+                android:layout_marginBottom="560dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_save_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="296dp"
+                android:layout_marginTop="745dp"
+                android:layout_marginEnd="27dp"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</ScrollView>

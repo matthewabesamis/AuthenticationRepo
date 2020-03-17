@@ -1,9 +1,28 @@
 <resources>
     <string name="app_name">KUNEKT</string>
     <string name="stringUsername">E-mail Address</string>
+    <string name="stringFirstName">First Name</string>
+    <string name="stringLastName">Last Name</string>
+    <string name="stringDoB">Date of Birth</string>
+    <string name="stringGender">Gender</string>
+    <string name="stringMale">Male</string>
+    <string name="stringFemale">Female</string>
     <string name="stringPassword">Password</string>
     <string name="stringLogin">Log in</string>
     <string name="stringSignUp">SIGN UP</string>
     <string name="stringMessage">Password must be at least 6 characters long</string>
+    <string name="title_activity_user__profile">User_Profile</string>
+    <string name="title_about">About</string>
+    <string name="title_job">Job title</string>
+    <string name="title_company">Company</string>
+    <string name="title_school">School</string>
+    <string name="title_checkins">Check-Ins</string>
+    <string name="title_friends">Friends</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_kunekt__home">Kunekt_Home</string>
+    <string name="open" />
+    <string name="close" />
 
 </resources>

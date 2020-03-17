@@ -2,6 +2,7 @@ package com.example.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,12 +20,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateAccount extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private EditText firstName;
+    private EditText lastName;
     private EditText email;
     private EditText password;
     private EditText retypePassword;
@@ -38,6 +47,8 @@ public class CreateAccount extends AppCompatActivity {
 
         mAuth= FirebaseAuth.getInstance();
 
+        firstName = findViewById(R.id.createFirstName);
+        lastName = findViewById(R.id.createLastName);
         email = findViewById(R.id.createUsername);
         password = findViewById(R.id.createPassword);
         retypePassword = findViewById(R.id.retypePassword);
@@ -48,9 +59,6 @@ public class CreateAccount extends AppCompatActivity {
                 if (firebaseAuth.getCurrentUser() != null)
                 {
                     startActivity(new Intent(CreateAccount.this, MainActivity.class));
-                }
-                else {
-                    Toast.makeText(CreateAccount.this, "Please Log in.", Toast.LENGTH_LONG).show();
                 }
             }
         };
@@ -83,11 +91,13 @@ public class CreateAccount extends AppCompatActivity {
     }
 
     public void SignUpAccount () {
-        String emailString = email.getText().toString();
+        final String emailString = email.getText().toString();
         String passwordString = password.getText().toString();
         String retypePasswordString = retypePassword.getText().toString();
+        final String firstString = firstName.getText().toString();
+        final String lastString = lastName.getText().toString();
 
-        if (TextUtils.isEmpty(emailString) || TextUtils.isEmpty(passwordString)|| TextUtils.isEmpty(retypePasswordString))
+        if (TextUtils.isEmpty(emailString) || TextUtils.isEmpty(passwordString)|| TextUtils.isEmpty(retypePasswordString) || TextUtils.isEmpty(firstString) || TextUtils.isEmpty(lastString))
         {
             Toast.makeText(CreateAccount.this, "Some fields are empty.", Toast.LENGTH_SHORT).show();
         }
@@ -98,6 +108,8 @@ public class CreateAccount extends AppCompatActivity {
         else if (passwordString.length() < 6)
         {
             Toast.makeText(CreateAccount.this, "Passwords must be at least 6 characters long.", Toast.LENGTH_SHORT).show();
+            TextView lessThan = findViewById(R.id.textView4);
+            lessThan.setText(R.string.stringMessage);
         }
         else if (!emailString.isEmpty() && !passwordString.isEmpty())
         {
@@ -109,7 +121,36 @@ public class CreateAccount extends AppCompatActivity {
                         Toast.makeText(CreateAccount.this, "Log in Error. Please try again", Toast.LENGTH_LONG).show();
                     }
                     else {
-                        startActivity(new Intent(CreateAccount.this, MainActivity.class));
+                        String fullName = firstString + " " + lastString;
+
+                        //user id from auth
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        String uid = user.getUid();
+
+                        //put info into hashmap
+                        HashMap<Object, String> hashMap = new HashMap<>();
+                        hashMap.put("fullName", fullName);
+                        hashMap.put("uid", uid);
+
+                        //firebase data instance
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        //path stored data to users
+                        DatabaseReference reference = database.getReference("Users");
+                        //put hashmap data in database
+                        reference.child(uid).setValue(hashMap);
+
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullName)
+                                .build();
+                        user.updateProfile(profileUpdates);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("key", fullName);
+                        Fragment frag = new KunektProfile();
+                        frag.setArguments(bundle);
+
+                        Intent passInfo = new Intent(CreateAccount.this, MainActivity.class);
+                        passInfo.putExtra("name", fullName);
+                        startActivity(passInfo);
                     }
                 }
             });
